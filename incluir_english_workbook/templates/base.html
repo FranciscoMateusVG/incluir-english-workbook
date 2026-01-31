@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Incluir English Workbook</title>
+    <link rel="stylesheet" href="../styles/print.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <!--
+        VARIANT TOGGLE:
+        - Add class="student-version" to <html> for student output (answers hidden)
+        - Add class="teacher-version" to <html> for teacher output (answers visible)
+        Default (no class) = student version
+    -->
+</head>
+<body>
+    <!--
+    ============================================================================
+    INCLUIR ENGLISH WORKBOOK - BASE TEMPLATE
+    ============================================================================
+
+    This is the foundational HTML structure. All content pages must follow
+    this structure exactly.
+
+    REQUIRED SECTIONS:
+    1. <header class="workbook-header"> - Page header (appears on every page)
+    2. <main class="workbook-content"> - Primary content area
+    3. <footer class="workbook-footer"> - Page footer (appears on every page)
+
+    VARIANT CLASSES (add to <html> element):
+    - student-version: Hides answers, answer keys, and teacher notes
+    - teacher-version: Shows everything including answers
+
+    ============================================================================
+    -->
+
+    <header class="workbook-header">
+        <div class="header-left">
+            <span class="workbook-title">Incluir English Workbook</span>
+        </div>
+        <div class="header-center">
+            <span class="chapter-title">{{chapter_title}}</span>
+        </div>
+        <div class="header-right">
+            <span class="unit-number">{{unit_number}}</span>
+        </div>
+    </header>
+
+    <main class="workbook-content">
+        <!-- CONTENT PLACEHOLDER -->
+        <!-- Replace this comment with chapter/unit content -->
+        {{content}}
+    </main>
+
+    <footer class="workbook-footer">
+        <div class="footer-left">
+            <span class="copyright">Incluir</span>
+        </div>
+        <div class="footer-center">
+            <span class="page-number"></span>
+        </div>
+        <div class="footer-right">
+            <span class="version-indicator"></span>
+        </div>
+    </footer>
+</body>
+</html>

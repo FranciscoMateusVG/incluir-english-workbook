@@ -1,0 +1,23 @@
+{
+  "name": "incluir-english-workbook",
+  "version": "1.0.0",
+  "description": "AI-generated English learning workbook with PDF rendering",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:student": "node scripts/build.js content/chapters/chapter-01-greetings.html -v student",
+    "build:teacher": "node scripts/build.js content/chapters/chapter-01-greetings.html -v teacher",
+    "build:all": "node scripts/build-all.js",
+    "preview": "npx serve -l 3000",
+    "install:playwright": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

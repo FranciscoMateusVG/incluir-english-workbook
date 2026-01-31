@@ -1,0 +1,461 @@
+/*
+================================================================================
+INCLUIR ENGLISH WORKBOOK - PRINT STYLESHEET
+================================================================================
+
+This is the PRIMARY stylesheet for PDF generation. All rules are print-first.
+
+CRITICAL: This file controls:
+- Page size (A4)
+- Margins
+- Typography
+- Page breaks
+- Headers and footers
+
+DO NOT add web-specific styles here. This is for PRINT ONLY.
+
+================================================================================
+*/
+
+/* =============================================================================
+   1. PAGE SETUP
+   ============================================================================= */
+
+@page {
+    size: A4;
+    margin: 20mm 15mm 25mm 15mm; /* top, right, bottom, left */
+
+    /* Running headers/footers via CSS (limited browser support) */
+    @top-center {
+        content: element(running-header);
+    }
+    @bottom-center {
+        content: counter(page);
+    }
+}
+
+/* First page of chapters - no header */
+@page chapter-start {
+    @top-center {
+        content: none;
+    }
+}
+
+/* Cover page - no margins, no header/footer */
+@page cover {
+    margin: 0;
+    @top-center { content: none; }
+    @bottom-center { content: none; }
+}
+
+/* =============================================================================
+   2. ROOT VARIABLES
+   ============================================================================= */
+
+:root {
+    /* Typography */
+    --font-family-body: "Georgia", "Times New Roman", serif;
+    --font-family-headings: "Helvetica Neue", "Arial", sans-serif;
+    --font-family-mono: "Consolas", "Monaco", monospace;
+
+    /* Font sizes (optimized for print) */
+    --font-size-base: 11pt;
+    --font-size-small: 9pt;
+    --font-size-large: 13pt;
+    --font-size-h1: 24pt;
+    --font-size-h2: 18pt;
+    --font-size-h3: 14pt;
+    --font-size-h4: 12pt;
+
+    /* Line heights */
+    --line-height-body: 1.5;
+    --line-height-tight: 1.3;
+    --line-height-loose: 1.8;
+
+    /* Spacing */
+    --spacing-xs: 4pt;
+    --spacing-sm: 8pt;
+    --spacing-md: 16pt;
+    --spacing-lg: 24pt;
+    --spacing-xl: 32pt;
+
+    /* Colors (CMYK-safe for print) */
+    --color-text: #1a1a1a;
+    --color-text-muted: #4a4a4a;
+    --color-heading: #000000;
+    --color-accent: #2c5aa0;
+    --color-accent-light: #e8f0fa;
+    --color-success: #2e7d32;
+    --color-success-light: #e8f5e9;
+    --color-warning: #f57c00;
+    --color-warning-light: #fff3e0;
+    --color-border: #cccccc;
+    --color-border-light: #e0e0e0;
+    --color-background-alt: #f5f5f5;
+}
+
+/* =============================================================================
+   3. BASE TYPOGRAPHY
+   ============================================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--font-size-base);
+}
+
+body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-body);
+    color: var(--color-text);
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-headings);
+    color: var(--color-heading);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    line-height: var(--line-height-tight);
+    page-break-after: avoid;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    margin-top: 0;
+    border-bottom: 2pt solid var(--color-accent);
+    padding-bottom: var(--spacing-sm);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-accent);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+}
+
+/* Paragraphs */
+p {
+    margin: 0 0 var(--spacing-md) 0;
+    orphans: 3;
+    widows: 3;
+}
+
+/* Lists */
+ul, ol {
+    margin: 0 0 var(--spacing-md) 0;
+    padding-left: var(--spacing-lg);
+}
+
+li {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Links (for PDF, make them look like text but keep underline) */
+a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* Strong and emphasis */
+strong, b {
+    font-weight: 700;
+}
+
+em, i {
+    font-style: italic;
+}
+
+/* =============================================================================
+   4. PAGE BREAK RULES
+   ============================================================================= */
+
+/*
+CRITICAL PAGINATION RULES:
+- Headings should never be alone at bottom of page
+- Exercises should not split
+- Callouts should not split
+- Tables can split but prefer not to
+*/
+
+/* Force page break BEFORE these elements */
+.page-break-before,
+.chapter-start,
+.unit-start {
+    page-break-before: always;
+}
+
+/* Force page break AFTER these elements */
+.page-break-after {
+    page-break-after: always;
+}
+
+/* Prevent page break INSIDE these elements */
+.no-break,
+.exercise,
+.callout,
+.rule-box,
+.example,
+.vocab-item,
+.dialogue-block {
+    page-break-inside: avoid;
+}
+
+/* Prevent page break AFTER headings */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+}
+
+/* Keep these with following content */
+.keep-with-next {
+    page-break-after: avoid;
+}
+
+/* =============================================================================
+   5. HEADER AND FOOTER
+   ============================================================================= */
+
+.workbook-header {
+    position: running(running-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 0.5pt solid var(--color-border);
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+}
+
+.workbook-footer {
+    position: running(running-footer);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-top: 0.5pt solid var(--color-border);
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+}
+
+/* =============================================================================
+   6. CONTENT AREA
+   ============================================================================= */
+
+.workbook-content {
+    min-height: 100%;
+}
+
+/* =============================================================================
+   7. COVER PAGE
+   ============================================================================= */
+
+.cover-page {
+    page: cover;
+}
+
+.cover-container {
+    width: 210mm;
+    height: 297mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30mm 25mm;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #1a3a6e 100%);
+    color: white;
+}
+
+.cover-logo {
+    max-width: 60mm;
+    height: auto;
+}
+
+.cover-main {
+    text-align: center;
+}
+
+.cover-title {
+    font-size: 36pt;
+    font-weight: 700;
+    margin: 0 0 var(--spacing-md) 0;
+    color: white;
+    border-bottom: none;
+}
+
+.cover-subtitle {
+    font-size: 18pt;
+    margin: 0 0 var(--spacing-sm) 0;
+    opacity: 0.9;
+}
+
+.cover-level {
+    font-size: 14pt;
+    opacity: 0.8;
+}
+
+.cover-footer {
+    text-align: center;
+    font-size: var(--font-size-small);
+    opacity: 0.7;
+}
+
+/* =============================================================================
+   8. TABLE OF CONTENTS
+   ============================================================================= */
+
+.toc-content {
+    page-break-before: always;
+}
+
+.toc-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.toc-nav {
+    max-width: 160mm;
+    margin: 0 auto;
+}
+
+.toc-chapter {
+    margin-bottom: var(--spacing-lg);
+}
+
+.toc-chapter-link,
+.toc-unit-link {
+    display: flex;
+    align-items: baseline;
+    text-decoration: none;
+    color: var(--color-text);
+    padding: var(--spacing-xs) 0;
+}
+
+.toc-chapter-link {
+    font-weight: 700;
+    font-size: var(--font-size-large);
+}
+
+.toc-unit-link {
+    padding-left: var(--spacing-lg);
+    font-size: var(--font-size-base);
+}
+
+.toc-chapter-number,
+.toc-unit-number {
+    min-width: 20mm;
+    flex-shrink: 0;
+}
+
+.toc-chapter-name,
+.toc-unit-name {
+    flex-grow: 0;
+}
+
+.toc-dots {
+    flex-grow: 1;
+    border-bottom: 1pt dotted var(--color-border);
+    margin: 0 var(--spacing-sm);
+    min-width: 10mm;
+}
+
+.toc-page-number {
+    min-width: 10mm;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* =============================================================================
+   9. IMAGES
+   ============================================================================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: var(--spacing-md) 0;
+    page-break-inside: avoid;
+}
+
+figcaption {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-top: var(--spacing-xs);
+}
+
+/* =============================================================================
+   10. TABLES
+   ============================================================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-md) 0;
+    font-size: var(--font-size-base);
+}
+
+th, td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border: 0.5pt solid var(--color-border);
+    vertical-align: top;
+}
+
+th {
+    background-color: var(--color-accent);
+    color: white;
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-background-alt);
+}
+
+/* Allow tables to break across pages if necessary */
+table {
+    page-break-inside: auto;
+}
+
+tr {
+    page-break-inside: avoid;
+}
+
+thead {
+    display: table-header-group;
+}
+
+/* =============================================================================
+   11. PRINT-SPECIFIC UTILITIES
+   ============================================================================= */
+
+/* Hide elements in print */
+.no-print,
+.screen-only {
+    display: none !important;
+}
+
+/* Show elements only in print */
+.print-only {
+    display: block;
+}
+
+/* Force grayscale (for cost-effective printing) */
+.grayscale {
+    filter: grayscale(100%);
+}
