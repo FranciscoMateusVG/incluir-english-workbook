@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Output (generated PDFs)
+output/
+
+# OS files
+.DS_Store
+Thumbs.db
+.env
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.tmp-workbook*.html

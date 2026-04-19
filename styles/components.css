@@ -1,0 +1,1356 @@
+/*
+================================================================================
+INCLUIR ENGLISH WORKBOOK - COMPONENT LIBRARY
+================================================================================
+
+This file defines ALL visual components that AI agents can use when generating
+content. Each component has:
+
+1. A clear purpose
+2. Required HTML structure
+3. Allowed child elements
+4. Example usage
+
+RULE: AI agents MUST only use components defined in this file.
+RULE: Components cannot be nested arbitrarily - see NESTING RULES section.
+
+================================================================================
+*/
+
+/* =============================================================================
+   COMPONENT INDEX
+   =============================================================================
+
+   STRUCTURAL COMPONENTS:
+   - .chapter          - Chapter container (page-break-before)
+   - .unit             - Unit container within a chapter
+   - .section          - Generic section within a unit
+
+   CONTENT COMPONENTS:
+   - .rule-box         - Grammar rules, key points
+   - .callout          - Tips, notes, warnings
+   - .example          - Example sentences/dialogues
+   - .vocab-table      - Vocabulary lists
+   - .dialogue-block   - Conversation examples
+
+   EXERCISE COMPONENTS:
+   - .exercise         - Exercise container
+   - .exercise-instructions
+   - .exercise-items
+   - .exercise-item
+   - .answer           - Hidden in student version
+   - .answer-blank     - Fill-in-the-blank space
+   - .answer-line      - Writing line
+
+   ANSWER KEY COMPONENTS:
+   - .answer-key       - Answer key section (hidden in student version)
+   - .answer-key-item
+
+   TEACHER-ONLY COMPONENTS:
+   - .teacher-note     - Notes for teachers (hidden in student version)
+
+   ============================================================================= */
+
+/* =============================================================================
+   1. STRUCTURAL COMPONENTS
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   .chapter - Top-level chapter container
+   ----------------------------------------------------------------------------- */
+.chapter {
+    page-break-before: always;
+}
+
+.chapter:first-of-type {
+    page-break-before: avoid;
+}
+
+.chapter-header {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1pt solid var(--color-border);
+}
+
+.chapter-number {
+    display: block;
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-large);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    margin-bottom: var(--spacing-xs);
+}
+
+.chapter-title {
+    font-size: var(--font-size-h1);
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.chapter-intro {
+    font-size: var(--font-size-large);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: var(--spacing-md);
+}
+
+/* -----------------------------------------------------------------------------
+   .unit - Section within a chapter
+   ----------------------------------------------------------------------------- */
+.unit {
+    margin-top: var(--spacing-xl);
+    page-break-before: auto;
+}
+
+.unit-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.unit-number {
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+}
+
+.unit-title {
+    font-size: var(--font-size-h2);
+    margin: var(--spacing-xs) 0 0 0;
+}
+
+/* Force page break before unit if needed */
+.unit.page-break-before {
+    page-break-before: always;
+}
+
+/* -----------------------------------------------------------------------------
+   .section - Generic content section
+   ----------------------------------------------------------------------------- */
+.section {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-md);
+}
+
+/* =============================================================================
+   2. RULE BOX
+   =============================================================================
+
+   PURPOSE: Display grammar rules, key points, or important information.
+
+   STRUCTURE:
+   <div class="rule-box">
+       <div class="rule-box-header">
+           <span class="rule-box-icon">ICON</span>
+           <span class="rule-box-title">Title</span>
+       </div>
+       <div class="rule-box-content">
+           Content here...
+       </div>
+   </div>
+
+   ALLOWED CHILDREN in .rule-box-content:
+   - <p>
+   - <ul>, <ol>
+   - <table> (simple)
+   - .example (inline examples)
+
+   CANNOT CONTAIN:
+   - .exercise
+   - .callout
+   - .answer-key
+   - Nested .rule-box
+
+   ============================================================================= */
+
+.rule-box {
+    background-color: transparent;
+    border: 1pt solid var(--color-border);
+    border-left: 3pt solid var(--color-heading);
+    border-radius: 0;
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    page-break-inside: avoid;
+}
+
+.rule-box-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.rule-box-icon {
+    font-size: 16pt;
+    margin-right: var(--spacing-sm);
+}
+
+.rule-box-title {
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    color: var(--color-heading);
+}
+
+.rule-box-content {
+    font-size: var(--font-size-base);
+}
+
+.rule-box-content > *:last-child {
+    margin-bottom: 0;
+}
+
+/* =============================================================================
+   3. CALLOUT
+   =============================================================================
+
+   PURPOSE: Tips, notes, warnings, or supplementary information.
+
+   VARIANTS:
+   - .callout.tip      - Helpful tips (green)
+   - .callout.note     - General notes (blue)
+   - .callout.warning  - Cautions (orange)
+   - .callout.remember - Key points to remember (purple)
+
+   STRUCTURE:
+   <div class="callout tip">
+       <div class="callout-icon">ICON</div>
+       <div class="callout-content">
+           <strong class="callout-label">Tip:</strong>
+           Content here...
+       </div>
+   </div>
+
+   ALLOWED CHILDREN in .callout-content:
+   - <p>
+   - <ul>, <ol>
+   - <strong>, <em>
+
+   CANNOT CONTAIN:
+   - .exercise
+   - .rule-box
+   - .example
+   - .vocab-table
+   - Nested .callout
+
+   ============================================================================= */
+
+.callout {
+    display: flex;
+    align-items: flex-start;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    border-radius: 0;
+    page-break-inside: avoid;
+}
+
+.callout-icon {
+    font-size: 18pt;
+    margin-right: var(--spacing-sm);
+    flex-shrink: 0;
+}
+
+.callout-content {
+    flex-grow: 1;
+}
+
+.callout-label {
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+}
+
+.callout-content > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Callout variants — all monochrome */
+.callout.tip {
+    background-color: var(--color-background-alt);
+    border: 1pt solid var(--color-border);
+}
+.callout.tip .callout-label {
+    color: var(--color-heading);
+}
+
+.callout.note {
+    background-color: var(--color-background-alt);
+    border: 1pt solid var(--color-border);
+}
+.callout.note .callout-label {
+    color: var(--color-heading);
+}
+
+.callout.warning {
+    background-color: var(--color-background-alt);
+    border: 1pt solid var(--color-border);
+}
+.callout.warning .callout-label {
+    color: var(--color-heading);
+}
+
+.callout.remember {
+    background-color: var(--color-background-alt);
+    border: 1pt solid var(--color-border);
+}
+.callout.remember .callout-label {
+    color: var(--color-heading);
+}
+
+/* =============================================================================
+   4. EXAMPLE
+   =============================================================================
+
+   PURPOSE: Show example sentences, phrases, or usage.
+
+   STRUCTURE:
+   <div class="example">
+       <div class="example-label">Example:</div>
+       <div class="example-content">
+           <p class="example-english">Hello, how are you?</p>
+           <p class="example-translation">Ol, como vai?</p>
+       </div>
+   </div>
+
+   ALLOWED CHILDREN:
+   - .example-english
+   - .example-translation
+   - .example-note
+
+   CANNOT CONTAIN:
+   - .exercise
+   - .callout
+   - .rule-box
+
+   ============================================================================= */
+
+.example {
+    background-color: transparent;
+    border-left: 2pt solid var(--color-border);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    page-break-inside: avoid;
+}
+
+.example-label {
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    margin-bottom: var(--spacing-xs);
+}
+
+.example-content {
+    margin: 0;
+}
+
+.example-english {
+    font-size: var(--font-size-large);
+    font-weight: 600;
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.example-translation {
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.example-note {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    margin-top: var(--spacing-xs);
+}
+
+/* Multiple examples in a group */
+.example-group {
+    margin: var(--spacing-md) 0;
+}
+
+.example-group .example {
+    margin: var(--spacing-xs) 0;
+}
+
+/* =============================================================================
+   5. VOCABULARY TABLE
+   =============================================================================
+
+   PURPOSE: Display vocabulary lists with English, translation, and optionally
+   pronunciation or notes.
+
+   STRUCTURE:
+   <div class="vocab-table">
+       <table>
+           <thead>
+               <tr>
+                   <th>English</th>
+                   <th>Portugus</th>
+                   <th>Example</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr class="vocab-item">
+                   <td class="vocab-english">hello</td>
+                   <td class="vocab-translation">ol</td>
+                   <td class="vocab-example">Hello, my name is...</td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+
+   ============================================================================= */
+
+.vocab-table {
+    margin: var(--spacing-lg) 0;
+}
+
+.vocab-table table {
+    width: 100%;
+}
+
+.vocab-table th {
+    text-align: left;
+}
+
+.vocab-item {
+    page-break-inside: avoid;
+}
+
+.vocab-english {
+    font-weight: 600;
+}
+
+.vocab-translation {
+    font-style: italic;
+}
+
+.vocab-example {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+}
+
+.vocab-pronunciation {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+}
+
+/* =============================================================================
+   6. DIALOGUE BLOCK
+   =============================================================================
+
+   PURPOSE: Display conversations between characters.
+
+   STRUCTURE:
+   <div class="dialogue-block">
+       <div class="dialogue-header">At the Coffee Shop</div>
+       <div class="dialogue-line">
+           <span class="dialogue-speaker">Maria:</span>
+           <span class="dialogue-text">Hello! Can I have a coffee, please?</span>
+       </div>
+       <div class="dialogue-line">
+           <span class="dialogue-speaker">Waiter:</span>
+           <span class="dialogue-text">Of course! Would you like milk?</span>
+       </div>
+   </div>
+
+   ============================================================================= */
+
+.dialogue-block {
+    background-color: transparent;
+    border: 1pt solid var(--color-border);
+    border-radius: 0;
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    page-break-inside: avoid;
+}
+
+.dialogue-header {
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+    font-size: var(--font-size-base);
+    color: var(--color-heading);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1pt solid var(--color-border-light);
+}
+
+.dialogue-line {
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+}
+
+.dialogue-line:last-child {
+    margin-bottom: 0;
+}
+
+.dialogue-speaker {
+    font-weight: 700;
+    min-width: 25mm;
+    flex-shrink: 0;
+    color: var(--color-heading);
+}
+
+.dialogue-text {
+    flex-grow: 1;
+}
+
+.dialogue-translation {
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+    margin-left: 25mm;
+    margin-top: 2pt;
+}
+
+/* =============================================================================
+   7. EXERCISE
+   =============================================================================
+
+   PURPOSE: Practice activities for students.
+
+   STRUCTURE:
+   <div class="exercise" data-exercise-type="fill-blank">
+       <div class="exercise-header">
+           <span class="exercise-number">Exercise 1</span>
+           <span class="exercise-title">Fill in the blanks</span>
+       </div>
+       <div class="exercise-instructions">
+           <p>Complete the sentences with the correct word.</p>
+       </div>
+       <div class="exercise-items">
+           <div class="exercise-item">
+               <span class="exercise-item-number">1.</span>
+               <span class="exercise-item-content">
+                   She <span class="answer-blank" data-answer="is"></span> a teacher.
+               </span>
+               <span class="answer">is</span>
+           </div>
+       </div>
+   </div>
+
+   EXERCISE TYPES (data-exercise-type):
+   - fill-blank
+   - multiple-choice
+   - matching
+   - true-false
+   - short-answer
+   - translation
+   - ordering
+   - listening (for audio exercises)
+
+   ALLOWED CHILDREN:
+   - .exercise-header
+   - .exercise-instructions
+   - .exercise-items
+   - .exercise-item
+   - .answer (hidden in student version)
+
+   CANNOT CONTAIN:
+   - .rule-box
+   - .callout
+   - Nested .exercise
+
+   ============================================================================= */
+
+.exercise {
+    border: 1pt solid var(--color-border);
+    border-radius: 0;
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    page-break-inside: avoid;
+}
+
+.exercise-header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1pt solid var(--color-border-light);
+}
+
+.exercise-number {
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-right: var(--spacing-sm);
+}
+
+.exercise-title {
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+}
+
+.exercise-instructions {
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+.exercise-instructions > *:last-child {
+    margin-bottom: 0;
+}
+
+.exercise-items {
+    margin: 0;
+}
+
+.exercise-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    page-break-inside: avoid;
+}
+
+.exercise-item:last-child {
+    margin-bottom: 0;
+}
+
+.exercise-item-number {
+    font-weight: 700;
+    min-width: 8mm;
+    flex-shrink: 0;
+}
+
+.exercise-item-content {
+    flex-grow: 1;
+}
+
+/* Answer blank - underline for fill-in-the-blank */
+.answer-blank {
+    display: inline-block;
+    min-width: 30mm;
+    border-bottom: 1pt solid var(--color-text);
+    margin: 0 2pt;
+}
+
+/* Answer line - full-width line for writing */
+.answer-line {
+    display: block;
+    width: 100%;
+    height: 8mm;
+    border-bottom: 1pt solid var(--color-border);
+    margin: var(--spacing-sm) 0;
+}
+
+/* Multiple answer lines */
+.answer-lines {
+    margin: var(--spacing-sm) 0;
+}
+
+.answer-lines .answer-line {
+    margin: var(--spacing-md) 0;
+}
+
+/* Multiple choice options */
+.exercise-options {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-sm) 0;
+}
+
+.exercise-option {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xs);
+}
+
+.exercise-option-letter {
+    font-weight: 700;
+    min-width: 8mm;
+    flex-shrink: 0;
+}
+
+.exercise-option-text {
+    flex-grow: 1;
+}
+
+/* Checkbox/circle for multiple choice */
+.exercise-checkbox {
+    display: inline-block;
+    width: 4mm;
+    height: 4mm;
+    border: 1pt solid var(--color-text);
+    border-radius: 50%;
+    margin-right: var(--spacing-xs);
+    flex-shrink: 0;
+}
+
+/* Matching exercise columns */
+.exercise-matching {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.exercise-matching-column {
+    flex: 1;
+}
+
+/* =============================================================================
+   8. ANSWER (Hidden in Student Version)
+   =============================================================================
+
+   PURPOSE: Contains correct answers, hidden in student version.
+
+   The .answer class is hidden when <html> has class="student-version"
+   or no variant class (default = student).
+
+   ============================================================================= */
+
+.answer {
+    color: var(--color-heading);
+    font-weight: 600;
+    background-color: var(--color-background-alt);
+    padding: 0 var(--spacing-xs);
+    border-radius: 0;
+}
+
+/* Inline answer (shown in teacher version only) */
+.answer-inline {
+    color: var(--color-heading);
+    font-weight: 600;
+}
+
+/* =============================================================================
+   9. ANSWER KEY
+   =============================================================================
+
+   PURPOSE: Complete answer key section, typically at end of chapter/unit.
+   Hidden in student version.
+
+   STRUCTURE:
+   <div class="answer-key">
+       <h3 class="answer-key-title">Answer Key</h3>
+       <div class="answer-key-section">
+           <h4>Exercise 1</h4>
+           <div class="answer-key-items">
+               <span class="answer-key-item">1. is</span>
+               <span class="answer-key-item">2. are</span>
+           </div>
+       </div>
+   </div>
+
+   ============================================================================= */
+
+.answer-key {
+    border: 1.5pt solid var(--color-heading);
+    border-radius: 0;
+    padding: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+    background-color: transparent;
+    page-break-before: always;
+}
+
+.answer-key-title {
+    color: var(--color-heading);
+    margin-top: 0;
+}
+
+.answer-key-section {
+    margin-bottom: var(--spacing-md);
+}
+
+.answer-key-section h4 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.answer-key-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm) var(--spacing-lg);
+}
+
+.answer-key-item {
+    font-family: var(--font-family-mono);
+}
+
+/* =============================================================================
+   10. TEACHER NOTE
+   =============================================================================
+
+   PURPOSE: Notes, instructions, or guidance for teachers only.
+   Hidden in student version.
+
+   STRUCTURE:
+   <div class="teacher-note">
+       <div class="teacher-note-label">Teacher Note:</div>
+       <div class="teacher-note-content">
+           <p>Suggested activity time: 15 minutes</p>
+       </div>
+   </div>
+
+   ============================================================================= */
+
+.teacher-note {
+    background-color: transparent;
+    border: 1pt dashed var(--color-border);
+    border-radius: 0;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.teacher-note-label {
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
+.teacher-note-content > *:last-child {
+    margin-bottom: 0;
+}
+
+/* =============================================================================
+   11. VERSION TOGGLE (Student vs Teacher)
+   =============================================================================
+
+   These rules control visibility based on which class is on <html>:
+   - student-version (or no class): Hide answers, answer keys, teacher notes
+   - teacher-version: Show everything
+
+   ============================================================================= */
+
+/* Default (no class) and student-version: hide teacher content */
+html:not(.teacher-version) .answer,
+html:not(.teacher-version) .answer-inline,
+html:not(.teacher-version) .answer-key,
+html:not(.teacher-version) .teacher-note,
+html.student-version .answer,
+html.student-version .answer-inline,
+html.student-version .answer-key,
+html.student-version .teacher-note {
+    display: none !important;
+}
+
+/* Teacher version: show everything, add visual indicator */
+html.teacher-version .answer,
+html.teacher-version .answer-inline {
+    display: inline;
+}
+
+html.teacher-version .answer-key,
+html.teacher-version .teacher-note {
+    display: block;
+}
+
+/* Teacher version indicator */
+html.teacher-version body::before {
+    content: "TEACHER EDITION";
+    position: fixed;
+    top: 5mm;
+    right: 5mm;
+    font-family: var(--font-family-headings);
+    font-size: 8pt;
+    color: var(--color-text-muted);
+    background: var(--color-background-alt);
+    border: 1pt solid var(--color-border);
+    padding: 2pt 6pt;
+    border-radius: 0;
+    z-index: 9999;
+}
+
+/* Fill in blanks with answers in teacher version */
+html.teacher-version .answer-blank[data-answer]::after {
+    content: attr(data-answer);
+    color: var(--color-heading);
+    font-weight: 600;
+}
+
+/* =============================================================================
+   12. READING PASSAGE
+   =============================================================================
+
+   PURPOSE: Text passages for reading comprehension exercises.
+
+   STRUCTURE:
+   <div class="reading-passage">
+       <div class="reading-passage-header">
+           <span class="reading-passage-title">The Coffee Shop</span>
+           <span class="reading-passage-meta">Read the text and answer the questions.</span>
+       </div>
+       <div class="reading-passage-content">
+           <p>Maria walked into the coffee shop...</p>
+       </div>
+       <div class="reading-passage-footer">
+           <span class="reading-passage-source">Adapted from...</span>
+       </div>
+   </div>
+
+   ============================================================================= */
+
+.reading-passage {
+    background-color: transparent;
+    border: 1pt solid var(--color-border);
+    border-radius: 0;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    page-break-inside: avoid;
+}
+
+.reading-passage-header {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1pt solid var(--color-border-light);
+}
+
+.reading-passage-title {
+    display: block;
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: var(--spacing-xs);
+}
+
+.reading-passage-meta {
+    display: block;
+    font-size: var(--font-size-small);
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+.reading-passage-content {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-loose);
+    text-align: justify;
+}
+
+.reading-passage-content p {
+    margin-bottom: var(--spacing-md);
+    text-indent: 2em;
+}
+
+.reading-passage-content p:first-child {
+    text-indent: 0;
+}
+
+.reading-passage-footer {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+    border-top: 1pt solid var(--color-border-light);
+}
+
+.reading-passage-source {
+    font-size: var(--font-size-small);
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+/* Reading passage with image */
+.reading-passage-with-image {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.reading-passage-with-image .reading-passage-image {
+    flex-shrink: 0;
+    width: 50mm;
+}
+
+.reading-passage-with-image .reading-passage-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4pt;
+}
+
+.reading-passage-with-image .reading-passage-body {
+    flex-grow: 1;
+}
+
+/* =============================================================================
+   13. MATCHING EXERCISE
+   =============================================================================
+
+   PURPOSE: Match items from column A to column B.
+
+   STRUCTURE:
+   <div class="exercise" data-exercise-type="matching">
+       <div class="exercise-header">...</div>
+       <div class="exercise-instructions">...</div>
+       <div class="matching-columns">
+           <div class="matching-column matching-column-left">
+               <div class="matching-item" data-match="1">
+                   <span class="matching-number">1.</span>
+                   <span class="matching-text">Hello</span>
+               </div>
+           </div>
+           <div class="matching-column matching-column-right">
+               <div class="matching-item" data-match="1">
+                   <span class="matching-letter">a)</span>
+                   <span class="matching-text">Tchau</span>
+               </div>
+           </div>
+       </div>
+       <div class="matching-answer-area">
+           <span class="matching-answer-slot">1. <span class="answer-blank"></span></span>
+       </div>
+   </div>
+
+   ============================================================================= */
+
+.matching-columns {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-md) 0;
+}
+
+.matching-column {
+    flex: 1;
+}
+
+.matching-column-left {
+    border-right: 1pt solid var(--color-border-light);
+    padding-right: var(--spacing-lg);
+}
+
+.matching-column-right {
+    padding-left: var(--spacing-lg);
+}
+
+.matching-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-xs) 0;
+}
+
+.matching-number,
+.matching-letter {
+    font-weight: 700;
+    min-width: 8mm;
+    flex-shrink: 0;
+}
+
+.matching-text {
+    flex-grow: 1;
+}
+
+.matching-answer-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm) var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1pt solid var(--color-border-light);
+}
+
+.matching-answer-slot {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+/* =============================================================================
+   14. ORDERING EXERCISE
+   =============================================================================
+
+   PURPOSE: Put items in correct order (sentences, paragraphs, steps).
+
+   STRUCTURE:
+   <div class="exercise" data-exercise-type="ordering">
+       <div class="exercise-header">...</div>
+       <div class="exercise-instructions">...</div>
+       <div class="ordering-items">
+           <div class="ordering-item">
+               <span class="ordering-box"></span>
+               <span class="ordering-text">Then she walked to school.</span>
+           </div>
+       </div>
+   </div>
+
+   ============================================================================= */
+
+.ordering-items {
+    margin: var(--spacing-md) 0;
+}
+
+.ordering-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background-color: transparent;
+    border: 1pt solid var(--color-border-light);
+    border-radius: 0;
+}
+
+.ordering-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 8mm;
+    height: 8mm;
+    border: 1pt solid var(--color-text);
+    border-radius: 2pt;
+    margin-right: var(--spacing-sm);
+    flex-shrink: 0;
+    font-weight: 700;
+}
+
+.ordering-text {
+    flex-grow: 1;
+}
+
+/* =============================================================================
+   15. WORD BANK
+   =============================================================================
+
+   PURPOSE: Box with words to use in fill-in-the-blank exercises.
+
+   STRUCTURE:
+   <div class="word-bank">
+       <div class="word-bank-title">Word Bank</div>
+       <div class="word-bank-items">
+           <span class="word-bank-item">hello</span>
+           <span class="word-bank-item">goodbye</span>
+           <span class="word-bank-item">morning</span>
+       </div>
+   </div>
+
+   ============================================================================= */
+
+.word-bank {
+    background-color: var(--color-background-alt);
+    border: 1pt solid var(--color-border);
+    border-radius: 0;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.word-bank-title {
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    color: var(--color-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
+.word-bank-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.word-bank-item {
+    background-color: white;
+    border: 1pt solid var(--color-border);
+    border-radius: 0;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-family: var(--font-family-mono);
+}
+
+/* =============================================================================
+   16. IMAGE COMPONENTS
+   =============================================================================
+
+   PURPOSE: Images with captions, image grids, labeled images.
+
+   ============================================================================= */
+
+/* Basic captioned image */
+.image-figure {
+    margin: var(--spacing-lg) 0;
+    text-align: center;
+    page-break-inside: auto;
+}
+
+.image-figure img {
+    max-width: 75%;
+    max-height: 120mm;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+.image-figure figcaption {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    margin-top: var(--spacing-sm);
+    font-style: italic;
+}
+
+/* Image grid (2-4 images in a row) */
+.image-grid {
+    display: flex;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    page-break-inside: auto;
+}
+
+.image-grid-item {
+    flex: 1;
+    text-align: center;
+}
+
+.image-grid-item img {
+    width: 100%;
+    max-height: 100mm;
+    height: auto;
+    border-radius: 0;
+    border: none;
+    object-fit: contain;
+}
+
+.image-grid-item .image-label {
+    display: block;
+    font-size: var(--font-size-small);
+    margin-top: var(--spacing-xs);
+    font-weight: 600;
+}
+
+/* Labeled image (with callouts/arrows) */
+.labeled-image {
+    position: relative;
+    margin: var(--spacing-lg) 0;
+    page-break-inside: avoid;
+}
+
+.labeled-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Image exercise (describe, label, etc.) */
+.image-exercise {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+    margin: var(--spacing-md) 0;
+}
+
+.image-exercise-image {
+    flex-shrink: 0;
+    width: 60mm;
+}
+
+.image-exercise-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4pt;
+    border: 1pt solid var(--color-border);
+}
+
+.image-exercise-content {
+    flex-grow: 1;
+}
+
+/* =============================================================================
+   17. LISTENING EXERCISE PLACEHOLDER
+   =============================================================================
+
+   PURPOSE: Indicate audio content (for future digital version).
+
+   STRUCTURE:
+   <div class="listening-box">
+       <div class="listening-icon">🎧</div>
+       <div class="listening-content">
+           <span class="listening-label">Listen to Track 3</span>
+           <span class="listening-description">A conversation at the airport</span>
+       </div>
+   </div>
+
+   ============================================================================= */
+
+.listening-box {
+    display: flex;
+    align-items: center;
+    background-color: #e3f2fd;
+    border: 1pt solid #2196f3;
+    border-radius: 4pt;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.listening-icon {
+    font-size: 24pt;
+    margin-right: var(--spacing-md);
+}
+
+.listening-content {
+    flex-grow: 1;
+}
+
+.listening-label {
+    display: block;
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+    color: #1565c0;
+}
+
+.listening-description {
+    display: block;
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+}
+
+/* =============================================================================
+   18. NESTING RULES REFERENCE
+   =============================================================================
+
+   This section documents which components can contain which others.
+
+   .chapter CAN contain:
+   - .unit
+   - .section
+   - All content components
+   - All exercise components
+
+   .unit CAN contain:
+   - .section
+   - All content components
+   - All exercise components
+
+   .rule-box CAN contain:
+   - <p>, <ul>, <ol>
+   - <table> (simple)
+   - .example
+
+   .rule-box CANNOT contain:
+   - .exercise
+   - .callout
+   - .answer-key
+   - Another .rule-box
+
+   .callout CAN contain:
+   - <p>, <ul>, <ol>
+   - <strong>, <em>
+
+   .callout CANNOT contain:
+   - .exercise
+   - .rule-box
+   - .example
+   - .vocab-table
+   - Another .callout
+
+   .example CAN contain:
+   - .example-english
+   - .example-translation
+   - .example-note
+
+   .example CANNOT contain:
+   - .exercise
+   - .callout
+   - .rule-box
+
+   .exercise CAN contain:
+   - .exercise-header
+   - .exercise-instructions
+   - .exercise-items
+   - .exercise-item
+   - .answer
+
+   .exercise CANNOT contain:
+   - .rule-box
+   - .callout
+   - Another .exercise
+
+   ============================================================================= */

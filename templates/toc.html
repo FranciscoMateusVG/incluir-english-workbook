@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of Contents - Incluir English Workbook</title>
+    <link rel="stylesheet" href="../styles/print.css">
+    <link rel="stylesheet" href="../styles/components.css">
+</head>
+<body>
+    <!--
+    ============================================================================
+    TABLE OF CONTENTS TEMPLATE
+    ============================================================================
+
+    Structure:
+    - Each chapter is a .toc-chapter
+    - Each unit within a chapter is a .toc-unit
+    - Page numbers are .toc-page-number (filled during PDF generation)
+
+    ============================================================================
+    -->
+
+    <main class="workbook-content toc-content">
+        <h1 class="toc-title">Table of Contents</h1>
+
+        <nav class="toc-nav">
+            <!--
+            EXAMPLE STRUCTURE - Replace with actual content
+
+            <div class="toc-chapter">
+                <a href="#chapter-1" class="toc-chapter-link">
+                    <span class="toc-chapter-number">Chapter 1</span>
+                    <span class="toc-chapter-name">Getting Started</span>
+                    <span class="toc-dots"></span>
+                    <span class="toc-page-number">1</span>
+                </a>
+
+                <div class="toc-units">
+                    <a href="#unit-1-1" class="toc-unit-link">
+                        <span class="toc-unit-number">1.1</span>
+                        <span class="toc-unit-name">Greetings and Introductions</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page-number">2</span>
+                    </a>
+                </div>
+            </div>
+            -->
+
+            {{toc_content}}
+        </nav>
+    </main>
+</body>
+</html>
