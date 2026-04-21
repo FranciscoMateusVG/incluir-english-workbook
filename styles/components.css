@@ -1178,6 +1178,22 @@ html.teacher-version .answer-blank[data-answer]::after {
     font-style: italic;
 }
 
+/* Size variants */
+.image-figure.large img {
+    max-width: 90%;
+    max-height: 160mm;
+}
+
+.image-figure.xlarge img {
+    max-width: 100%;
+    max-height: 200mm;
+}
+
+.image-figure.small img {
+    max-width: 50%;
+    max-height: 80mm;
+}
+
 /* Image grid (2-4 images in a row) */
 .image-grid {
     display: flex;
