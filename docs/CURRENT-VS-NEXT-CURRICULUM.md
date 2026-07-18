@@ -20,6 +20,53 @@ Choose a real-life mission -> teach the formula needed -> practice -> use it
 
 The new course should still teach grammar. But grammar should serve communication.
 
+## Important constraint: 8 teaching classes
+
+The semester has about 11 meetings. If 3 meetings are assessments, then each level only has about 8 real teaching classes.
+
+That means the curriculum cannot become a long list of isolated missions.
+
+The long mission lists in this document are ability banks. They are not one class each.
+
+The practical semester structure is:
+
+```text
+Class 1: Teaching mission 1
+Class 2: Teaching mission 2
+Class 3: Teaching mission 3
+Class 4: Test 1
+Class 5: Teaching mission 4
+Class 6: Teaching mission 5
+Class 7: Teaching mission 6
+Class 8: Test 2
+Class 9: Teaching mission 7
+Class 10: Teaching mission 8 / Speaking Mission preparation
+Class 11: Speaking Mission Exam
+```
+
+So the redesign should not replace the current workbook with a huge new syllabus. The realistic next step is to missionize the existing grammar anchors.
+
+In other words:
+
+```text
+Current grammar anchor + real-life mission = next-semester class
+```
+
+Example:
+
+```text
+Current anchor: Passive Voice
+New mission: Report a problem at an airport or customer service desk.
+
+Formula:
+My bag was lost.
+My card was declined.
+I was told to come here.
+
+Real use:
+Roleplay a help desk conversation.
+```
+
 ## Big progression
 
 By the end of B4, students should be able to survive predictable situations in an English-speaking environment.
@@ -345,49 +392,71 @@ Turn B4 into a performance level. Every unit should prepare students for a reali
 
 This is a first draft. It should guide planning, not freeze the curriculum.
 
-### B1 suggested units
+Each level should have 8 teaching missions. Each mission can include several micro-skills. Do not create one separate class for every bullet in the ability banks above.
 
-1. Classroom English and introductions.
-2. Personal information and verb to be.
-3. Family, work, and basic pronouns.
-4. Daily routine and Simple Present.
-5. Time, days, and schedules.
-6. Places, classroom objects, and prepositions.
-7. Describing people and things.
-8. Review mission: introduce yourself and ask basic questions.
+### B1: 8 teaching missions
 
-### B2 suggested units
+| Class | Current anchor | Missionized class goal |
+|---:|---|---|
+| 1 | Verb to be + day-to-day vocabulary | Meet someone in English: name, city, work/study, basic classroom language. |
+| 2 | Household chores + pronouns | Talk about family/home responsibilities using pronouns and possessives. |
+| 3 | Plurals + Simple Present | Talk about daily routines and common objects/actions. |
+| 4 | Test 1 | Integrated written/listening foundation test. |
+| 5 | Numbers beyond 100 | Use numbers for phone, prices, dates, addresses, and basic personal information. |
+| 6 | Frequency adverbs + possessives | Talk about weekly routine, habits, and things that belong to people. |
+| 7 | Time + prepositions | Talk about schedules: when classes, work, and activities happen. |
+| 8 | Test 2 | Integrated written/listening foundation test. |
+| 9 | Descriptions, transportation, directions | Describe people/places and ask for basic transportation or direction help. |
+| 10 | Review and speaking prep | Practice introducing yourself, asking basic questions, and asking for repetition. |
+| 11 | Speaking Mission Exam | Personal/classroom survival speaking exam. |
 
-1. Daily routine review and WH questions.
-2. Food, shopping, and countable/uncountable nouns.
-3. Prices, quantities, and quantifiers.
-4. Places, there is/there are, and demonstratives.
-5. Directions and transportation.
-6. Present Continuous: what is happening now.
-7. Routine vs now vs near future.
-8. Review mission: daily-life problem-solving.
+### B2: 8 teaching missions
 
-### B3 suggested units
+| Class | Current anchor | Missionized class goal |
+|---:|---|---|
+| 1 | Present Simple + WH questions | Interview someone about routine, work, school, and daily life. |
+| 2 | Plurals + countable/uncountable nouns | Talk about food, objects, and what exists in a place. |
+| 3 | Articles | Describe a city, neighborhood, classroom, or place using `a/an/the`. |
+| 4 | Test 1 | Integrated written/listening foundation test. |
+| 5 | Quantifiers | Shop for food/items: ask for quantities and say what you need. |
+| 6 | There is/there are + demonstratives | Describe rooms, places, and objects: this/that/these/those. |
+| 7 | Present Continuous | Describe what is happening now in a real scene or situation. |
+| 8 | Test 2 | Integrated written/listening foundation test. |
+| 9 | Present Continuous expanded + connectors | Explain routine vs now vs plans, connecting ideas with because/but/so. |
+| 10 | Review and speaking prep | Practice daily-life tasks: shopping, directions, describing places, asking WH questions. |
+| 11 | Speaking Mission Exam | Daily-life survival speaking exam. |
 
-1. Review: routines, directions, and daily life.
-2. Rules, advice, and obligations with modals.
-3. Future plans and arrangements.
-4. Simple Past: what happened?
-5. Past questions and storytelling.
-6. Problems and advice.
-7. Comparisons and decisions.
-8. Review mission: explain a problem and choose a solution.
+### B3: 8 teaching missions
 
-### B4 suggested units
+| Class | Current anchor | Missionized class goal |
+|---:|---|---|
+| 1 | Review of previous levels | Rebuild survival base: introduce yourself, routine, directions, and daily-life questions. |
+| 2 | Modal verbs | Ask for help, give advice, explain rules, obligations, and prohibitions. |
+| 3 | Rights and duties | Talk about responsibilities in school, work, and community contexts. |
+| 4 | Test 1 | Integrated written/listening foundation test. |
+| 5 | Simple Future | Talk about plans, predictions, and decisions. |
+| 6 | Future expanded + first conditional | Explain plans and consequences: if this happens, I will do that. |
+| 7 | Simple Past introduction | Explain what happened in a recent event or problem. |
+| 8 | Test 2 | Integrated written/listening foundation test. |
+| 9 | Simple Past practice + storytelling | Ask/answer past questions and tell a simple story in order. |
+| 10 | Comparatives/superlatives + intensifiers | Compare options and make decisions; speaking mission preparation. |
+| 11 | Speaking Mission Exam | Stories, plans, advice, and problem-solving speaking exam. |
 
-1. Arrival and introductions in a new place.
-2. Airport, transport, and directions.
-3. Hotel, housing, and room problems.
-4. Food, shopping, payments, and wrong orders.
-5. Health, pharmacy, and emergencies.
-6. Lost items, customer service, and complaints.
-7. Work/volunteering instructions and clarification.
-8. Final survival simulation: a day abroad.
+### B4: 8 teaching missions
+
+| Class | Current anchor | Missionized class goal |
+|---:|---|---|
+| 1 | Present/Past review | Talk about who you are, what you usually do, and what happened recently. |
+| 2 | Future + modals + prepositions | Make plans, ask for help/permission, and understand time/place instructions. |
+| 3 | Present Perfect | Talk about experiences and recent problems: `I have lost...`, `I have never...`. |
+| 4 | Test 1 | Integrated written/listening foundation test. |
+| 5 | Reported Speech | Explain what someone said, told, or asked you in a service/work situation. |
+| 6 | Past Perfect | Explain the order of events in a problem: what happened before what. |
+| 7 | Passive Voice | Report service problems: lost bag, declined card, canceled reservation. |
+| 8 | Test 2 | Integrated written/listening foundation test. |
+| 9 | Relative clauses + for vs to | Identify people, places, and things clearly when asking for help. |
+| 10 | Phrasal verbs + collocations | Understand and use common everyday service/work phrases; final simulation prep. |
+| 11 | Speaking Mission Exam | Final survival English speaking exam. |
 
 ## Cross-level non-negotiables
 
