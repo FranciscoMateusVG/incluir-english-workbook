@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incluir English Portal</title>
+  <meta name="description" content="Coordinator portal for Incluir English curriculum docs and workbook downloads.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Incluir English Portal">
+        <span class="brand-mark">IE</span>
+        <span>Incluir English</span>
+      </a>
+      <div class="nav-links">
+        <a href="#docs">Docs</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#levels">Levels</a>
+      </div>
+    </nav>
+
+    <div class="hero-grid" id="top">
+      <section class="hero-copy" aria-labelledby="hero-title">
+        <p class="eyebrow">Coordinator Portal</p>
+        <h1 id="hero-title">A practical home for the English course revamp.</h1>
+        <p class="hero-text">
+          Read the curriculum notes, share volunteer guidance, and download the
+          available apostilas from one calm place.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#docs">Read docs</a>
+          <a class="button secondary" href="#downloads">Download apostilas</a>
+        </div>
+      </section>
+
+      <aside class="principles" aria-label="Course principles">
+        <div>
+          <span class="metric">8</span>
+          <p>teaching missions per semester</p>
+        </div>
+        <div>
+          <span class="metric">3</span>
+          <p>assessments: two foundations, one speaking mission</p>
+        </div>
+        <div>
+          <span class="metric">1</span>
+          <p>class rhythm: Formula, Practice, Real Use</p>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro-band" aria-label="Course north star">
+      <div class="section-heading">
+        <p class="eyebrow">North Star</p>
+        <h2>Grammar stays. Mission comes first.</h2>
+      </div>
+      <div class="north-star">
+        <p>
+          By the end of B4, students should be able to survive predictable
+          situations in an English-speaking environment: ask for help, explain
+          problems, understand essential information, and keep communication alive.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="docs">
+      <div class="section-heading">
+        <p class="eyebrow">Documentation</p>
+        <h2>Read the working guides</h2>
+        <p>Choose a document to preview it here. Markdown files are also available in the repository.</p>
+      </div>
+
+      <div class="doc-layout">
+        <div class="doc-list" id="docList" aria-label="Document list"></div>
+        <article class="doc-reader" aria-live="polite">
+          <div class="reader-toolbar">
+            <div>
+              <p class="eyebrow">Now Reading</p>
+              <h3 id="docTitle">Loading...</h3>
+            </div>
+            <a class="button small" id="docDownload" href="#" download>Download MD</a>
+          </div>
+          <div class="markdown" id="docContent"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="downloads">
+      <div class="section-heading">
+        <p class="eyebrow">Downloads</p>
+        <h2>Apostilas and tests</h2>
+        <p>B4 files are ready. B1-B3 workbook downloads can be added after those books are published.</p>
+      </div>
+
+      <div class="download-grid">
+        <article class="download-card ready">
+          <div>
+            <p class="tag">B4 Student</p>
+            <h3>Workbook B4</h3>
+            <p>Student apostila for Inglês Adulto Básico 4.</p>
+          </div>
+          <a class="button primary" href="downloads/workbook-b4-student.pdf" download>Download</a>
+        </article>
+
+        <article class="download-card ready">
+          <div>
+            <p class="tag">B4 Teacher</p>
+            <h3>Workbook B4</h3>
+            <p>Teacher version with answers and guidance.</p>
+          </div>
+          <a class="button primary" href="downloads/workbook-b4-teacher.pdf" download>Download</a>
+        </article>
+
+        <article class="download-card ready">
+          <div>
+            <p class="tag">Review</p>
+            <h3>B4 Review Worksheet</h3>
+            <p>Student review worksheet for grammar consolidation.</p>
+          </div>
+          <a class="button primary" href="downloads/b4-review-worksheet-student.pdf" download>Download</a>
+        </article>
+
+        <article class="download-card ready">
+          <div>
+            <p class="tag">Teacher Review</p>
+            <h3>B4 Review Worksheet</h3>
+            <p>Teacher review worksheet with answer visibility.</p>
+          </div>
+          <a class="button primary" href="downloads/b4-review-worksheet-teacher.pdf" download>Download</a>
+        </article>
+
+        <article class="download-card ready">
+          <div>
+            <p class="tag">Test</p>
+            <h3>B4 End-of-Level Test</h3>
+            <p>Student test PDF for current B4 assessment.</p>
+          </div>
+          <a class="button primary" href="downloads/b4-test-student.pdf" download>Download</a>
+        </article>
+
+        <article class="download-card ready">
+          <div>
+            <p class="tag">Teacher Test</p>
+            <h3>B4 End-of-Level Test</h3>
+            <p>Teacher test PDF with answer visibility.</p>
+          </div>
+          <a class="button primary" href="downloads/b4-test-teacher.pdf" download>Download</a>
+        </article>
+      </div>
+
+      <div class="planned-grid" aria-label="Planned downloads">
+        <div class="planned-card">B1 apostila <span>planned</span></div>
+        <div class="planned-card">B2 apostila <span>planned</span></div>
+        <div class="planned-card">B3 apostila <span>planned</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="levels">
+      <div class="section-heading">
+        <p class="eyebrow">Level Map</p>
+        <h2>Four levels, one direction</h2>
+      </div>
+      <div class="level-grid">
+        <article>
+          <span>B1</span>
+          <h3>Personal and classroom survival</h3>
+          <p>Students learn to talk about themselves and function in class.</p>
+        </article>
+        <article>
+          <span>B2</span>
+          <h3>Daily life survival</h3>
+          <p>Students handle places, food, shopping, directions, and now-actions.</p>
+        </article>
+        <article>
+          <span>B3</span>
+          <h3>Stories, plans, advice</h3>
+          <p>Students explain what happened, what comes next, and what to do.</p>
+        </article>
+        <article>
+          <span>B4</span>
+          <h3>Survival English capstone</h3>
+          <p>Students solve realistic problems and prepare for the speaking mission.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Incluir English Portal</p>
+    <p>Formula -> Practice -> Real Use</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
