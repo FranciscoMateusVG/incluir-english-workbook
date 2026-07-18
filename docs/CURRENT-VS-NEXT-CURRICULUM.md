@@ -67,6 +67,42 @@ Real use:
 Roleplay a help desk conversation.
 ```
 
+## Grammar ownership vs recycling
+
+Some grammar must appear in more than one level. Students need repetition. But repetition should not become reteaching the same class again and again.
+
+The rule:
+
+```text
+One level owns the grammar.
+Later levels recycle it through missions.
+```
+
+Examples:
+
+| Grammar | Owner level | Later role |
+|---|---|---|
+| Verb to be | B1 | Recycled naturally in introductions and descriptions. |
+| Simple Present | B1 | Recycled in B2 interviews and later review. |
+| WH questions | B1/B2 | Recycled in all levels as classroom and survival language. |
+| Present Continuous | B2 | Recycled in B3 for future arrangements. |
+| Modals | B3 | Recycled in B4 for requests, help, rules, and advice. |
+| Simple Past | B3 | Recycled in B4 when explaining recent problems. |
+| Future forms | B3 | Recycled in B4 for travel plans and next steps. |
+| Present Perfect | B4 | Used for experiences and recent/unfinished problems. |
+| Passive Voice | B4 | Used for service problems: lost, stolen, declined, canceled. |
+
+This means B4 should not reteach modals as a full grammar unit. B3 owns modals. B4 uses them in survival phrases:
+
+```text
+Could you help me?
+Can you repeat that?
+Should I fill out this form?
+I have to go to gate 12.
+```
+
+The same is true for other repeated grammar. A later level may review quickly, but the main class time should go to applying the structure in a mission.
+
 ## Big progression
 
 By the end of B4, students should be able to survive predictable situations in an English-speaking environment.
@@ -183,6 +219,7 @@ Current risk:
 - B2 may become too abstract: articles, quantifiers, connectors, and grammar review can feel disconnected from real life.
 - Food, shopping, places, directions, and service interactions should be more central.
 - Listening/speaking tasks need stronger presence.
+- Connectors should not become two full mission anchors unless there is a clear communicative purpose.
 
 ### What B2 should become
 
@@ -259,6 +296,7 @@ Current risk:
 - B3 may still feel like grammar sequence: modals, future, past, comparatives.
 - Simple Past should become a major communicative tool, not only a verb-form unit.
 - Students need more practice explaining problems and asking for advice.
+- Present Continuous for future arrangements should be recycled from B2, not retaught as a full tense.
 
 ### What B3 should become
 
@@ -355,7 +393,7 @@ Core missions:
 Grammar to keep:
 
 - Present/Past/Future review.
-- Modals for requests, advice, obligation, and possibility.
+- Modals recycled for requests, advice, obligation, and possibility.
 - Prepositions of time/place.
 - Present Perfect for experiences and recent problems.
 - Passive Voice for problems and services.
@@ -365,6 +403,7 @@ Grammar to keep:
 
 Grammar to reduce or reframe:
 
+- Modals should be reviewed inside survival phrases, not retaught as a full B4 unit.
 - Past Perfect should be taught as useful for sequencing stories, not as a major isolated unit.
 - Reported Speech should be reduced or used only when it supports real tasks like explaining what someone told you.
 - Advanced grammar should not displace listening, speaking, and roleplay.
@@ -447,7 +486,7 @@ Each level should have 8 teaching missions. Each mission can include several mic
 | Class | Current anchor | Missionized class goal |
 |---:|---|---|
 | 1 | Present/Past review | Talk about who you are, what you usually do, and what happened recently. |
-| 2 | Future + modals + prepositions | Make plans, ask for help/permission, and understand time/place instructions. |
+| 2 | Future + prepositions, with modal review | Make plans, ask for help/permission, and understand time/place instructions. |
 | 3 | Present Perfect | Talk about experiences and recent problems: `I have lost...`, `I have never...`. |
 | 4 | Test 1 | Integrated written/listening foundation test. |
 | 5 | Reported Speech | Explain what someone said, told, or asked you in a service/work situation. |
