@@ -4,8 +4,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const PARTS_DIR = path.resolve(__dirname, '../content/b4/chapters/.review-parts');
-const OUT = path.resolve(__dirname, '../content/b4/chapters/b4-review-worksheet.html');
+const PARTS_DIR = path.resolve(__dirname, '../../../content/b4/legacy/review-parts');
+const OUT = path.resolve(__dirname, '../../../content/b4/legacy/review-worksheet.html');
 
 // Source part -> display order. Reviews 4 (Reported Speech) and 7 (Relative
 // Clauses & For vs To) were dropped per teacher; survivors renumber 1..6.

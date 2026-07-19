@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 // One-shot helper: pull each review subagent's final HTML fragment out of its
-// task transcript JSONL and write it to .review-parts/rev-N.html (raw HTML).
+// task transcript JSONL and write it to legacy/review-parts/rev-N.html (raw HTML).
 const fs = require('fs');
 const path = require('path');
 
 const TASK_DIR = '/private/tmp/claude-501/-Users-franciscomateus-projects-aperture/a755368c-0be4-4511-a959-12be409a089c/tasks';
-const OUT_DIR = path.resolve(__dirname, '../content/b4/chapters/.review-parts');
+const OUT_DIR = path.resolve(__dirname, '../../../content/b4/legacy/review-parts');
 
 // id -> review number (rev-1 was written by hand; extract 2..8)
 const MAP = [
