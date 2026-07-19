@@ -3,198 +3,288 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Incluir English Portal</title>
-  <meta name="description" content="Coordinator portal for Incluir English curriculum docs and workbook downloads.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#173f3a">
+  <title>Incluir English · Coordinator Portal</title>
+  <meta name="description" content="A practical coordinator and volunteer portal for Incluir English curriculum guides, apostilas, and tests.">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="hero">
-    <nav class="topbar" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Incluir English Portal">
-        <span class="brand-mark">IE</span>
-        <span>Incluir English</span>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="shell topbar">
+      <a class="brand" href="#top" aria-label="Incluir English coordinator portal home">
+        <span class="brand-mark" aria-hidden="true">IE</span>
+        <span class="brand-copy">
+          <strong>Incluir English</strong>
+          <small>Coordinator portal</small>
+        </span>
       </a>
-      <div class="nav-links">
-        <a href="#docs">Docs</a>
-        <a href="#downloads">Downloads</a>
-        <a href="#levels">Levels</a>
-      </div>
-    </nav>
 
-    <div class="hero-grid" id="top">
-      <section class="hero-copy" aria-labelledby="hero-title">
-        <p class="eyebrow">Coordinator Portal</p>
-        <h1 id="hero-title">A practical home for the English course revamp.</h1>
-        <p class="hero-text">
-          Read the curriculum notes, share volunteer guidance, and download the
-          available apostilas from one calm place.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#docs">Read docs</a>
-          <a class="button secondary" href="#downloads">Download apostilas</a>
-        </div>
-      </section>
-
-      <aside class="principles" aria-label="Course principles">
-        <div>
-          <span class="metric">8</span>
-          <p>teaching missions per semester</p>
-        </div>
-        <div>
-          <span class="metric">3</span>
-          <p>assessments: two foundations, one speaking mission</p>
-        </div>
-        <div>
-          <span class="metric">1</span>
-          <p>class rhythm: Formula, Practice, Real Use</p>
-        </div>
-      </aside>
+      <nav class="section-nav" aria-label="Portal sections">
+        <a href="#guides">Guides</a>
+        <a href="#materials">Materials</a>
+        <a href="#levels">Course map</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section class="section intro-band" aria-label="Course north star">
-      <div class="section-heading">
-        <p class="eyebrow">North Star</p>
-        <h2>Grammar stays. Mission comes first.</h2>
+  <main id="main">
+    <section class="section overview" aria-labelledby="overview-title">
+      <div class="shell overview-grid">
+        <div class="welcome-panel">
+          <p class="eyebrow">Coordinator workspace</p>
+          <h1 id="overview-title">Everything volunteers need to teach in the same direction.</h1>
+          <p class="welcome-copy">
+            Read the course decisions, prepare volunteers, and find the current
+            B4 apostilas and assessments without digging through folders.
+          </p>
+          <div class="quick-actions">
+            <a class="button primary" href="#guides">Browse guides</a>
+            <a class="button quiet" href="#materials">Get materials</a>
+            <button class="button text-button" id="continueReading" type="button" hidden></button>
+          </div>
+        </div>
+
+        <aside class="direction-card" aria-labelledby="direction-title">
+          <div class="direction-heading">
+            <p class="eyebrow">Course direction</p>
+            <span class="status-badge"><span aria-hidden="true"></span> Active draft</span>
+          </div>
+          <h2 id="direction-title">Mission first. Grammar in service.</h2>
+          <p>
+            By the end of B4, students should be able to solve predictable
+            real-world problems and keep communication alive.
+          </p>
+          <div class="course-rhythm" aria-label="Class rhythm">
+            <span>Formula</span>
+            <i aria-hidden="true">→</i>
+            <span>Practice</span>
+            <i aria-hidden="true">→</i>
+            <span>Real Use</span>
+          </div>
+        </aside>
       </div>
-      <div class="north-star">
-        <p>
-          By the end of B4, students should be able to survive predictable
-          situations in an English-speaking environment: ask for help, explain
-          problems, understand essential information, and keep communication alive.
-        </p>
+
+      <div class="shell facts" aria-label="Course at a glance">
+        <div><strong>8</strong><span>teaching missions per semester</span></div>
+        <div><strong>3</strong><span>assessments: two foundations + speaking</span></div>
+        <div><strong>Every class</strong><span>students listen, speak, and complete a task</span></div>
       </div>
     </section>
 
-    <section class="section" id="docs">
-      <div class="section-heading">
-        <p class="eyebrow">Documentation</p>
-        <h2>Read the working guides</h2>
-        <p>Choose a document to preview it here. Markdown files are also available in the repository.</p>
-      </div>
+    <section class="section guides-section" id="guides" aria-labelledby="guides-title">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Guide library</p>
+            <h2 id="guides-title">Read the working course guides</h2>
+            <p>Seven short references for curriculum, teaching, assessment, and lesson design.</p>
+          </div>
+          <p class="section-note">Your last document and reading position are saved on this device.</p>
+        </div>
 
-      <div class="doc-layout">
-        <div class="doc-list" id="docList" aria-label="Document list"></div>
-        <article class="doc-reader" aria-live="polite">
-          <div class="reader-toolbar">
-            <div>
-              <p class="eyebrow">Now Reading</p>
-              <h3 id="docTitle">Loading...</h3>
+        <div class="doc-workspace">
+          <aside class="library-panel" aria-label="Document library">
+            <label class="search-label" for="docSearch">Find a guide</label>
+            <div class="search-control">
+              <span aria-hidden="true">⌕</span>
+              <input id="docSearch" type="search" placeholder="Search title or topic" autocomplete="off">
+              <kbd aria-label="Keyboard shortcut slash">/</kbd>
             </div>
-            <a class="button small" id="docDownload" href="#" download>Download MD</a>
-          </div>
-          <div class="markdown" id="docContent"></div>
-        </article>
+            <p class="library-count" id="libraryCount">7 guides</p>
+            <div class="doc-list" id="docList" aria-label="Available guides"></div>
+            <p class="empty-state" id="docEmpty" hidden>No guides match that search.</p>
+          </aside>
+
+          <article class="doc-reader" id="docReader" aria-labelledby="docTitle">
+            <header class="reader-toolbar">
+              <div class="reader-title-group">
+                <p class="eyebrow" id="docCategory">Guide</p>
+                <h3 id="docTitle">Loading guide…</h3>
+                <p class="reader-meta" id="docMeta" aria-live="polite">Preparing document</p>
+              </div>
+              <div class="reader-actions">
+                <button class="button compact quiet" id="focusReader" type="button" aria-pressed="false">Focus view</button>
+                <a class="button compact" id="docDownload" href="#" download>Download .md</a>
+              </div>
+            </header>
+
+            <div class="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span id="readingProgress"></span>
+            </div>
+
+            <div class="reader-body">
+              <div class="reader-scroll" id="readerScroll" tabindex="0">
+                <div class="markdown" id="docContent"></div>
+              </div>
+              <aside class="toc-panel" aria-label="On this page">
+                <p>On this page</p>
+                <nav id="docToc"></nav>
+              </aside>
+            </div>
+            <p class="visually-hidden" id="docStatus" role="status"></p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="downloads">
-      <div class="section-heading">
-        <p class="eyebrow">Downloads</p>
-        <h2>Apostilas and tests</h2>
-        <p>B4 files are ready. B1-B3 workbook downloads can be added after those books are published.</p>
-      </div>
-
-      <div class="download-grid">
-        <article class="download-card ready">
+    <section class="section" id="materials" aria-labelledby="materials-title">
+      <div class="shell">
+        <div class="section-heading split-heading material-heading">
           <div>
-            <p class="tag">B4 Student</p>
-            <h3>Workbook B4</h3>
-            <p>Student apostila for Inglês Adulto Básico 4.</p>
+            <p class="eyebrow">Published materials</p>
+            <h2 id="materials-title">Apostilas and assessments</h2>
+            <p>Open a PDF to check it first, or download a copy for class.</p>
           </div>
-          <a class="button primary" href="downloads/workbook-b4-student.pdf" download>Download</a>
-        </article>
+          <div class="filter-group" role="group" aria-label="Filter materials by audience">
+            <button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-button" data-filter="student" aria-pressed="false">Student</button>
+            <button type="button" class="filter-button" data-filter="teacher" aria-pressed="false">Teacher</button>
+          </div>
+        </div>
 
-        <article class="download-card ready">
+        <p class="results-count" id="materialCount" aria-live="polite">Showing 6 materials</p>
+
+        <div class="material-list" id="materialList">
+          <article class="material-row" data-audience="student">
+            <div class="file-mark" aria-hidden="true">W</div>
+            <div class="material-copy">
+              <div class="material-labels"><span class="tag">Workbook</span><span class="audience student">Student</span></div>
+              <h3>B4 Workbook</h3>
+              <p>Complete student apostila for Inglês Adulto Básico 4.</p>
+              <span class="file-meta">PDF · 4.4 MB</span>
+            </div>
+            <div class="material-actions">
+              <a class="button compact quiet" href="downloads/workbook-b4-student.pdf" target="_blank" rel="noopener">Open</a>
+              <a class="button compact primary" href="downloads/workbook-b4-student.pdf" download>Download</a>
+            </div>
+          </article>
+
+          <article class="material-row" data-audience="teacher">
+            <div class="file-mark teacher" aria-hidden="true">W</div>
+            <div class="material-copy">
+              <div class="material-labels"><span class="tag">Workbook</span><span class="audience teacher">Teacher</span></div>
+              <h3>B4 Workbook with answers</h3>
+              <p>Teacher edition with answers and classroom guidance.</p>
+              <span class="file-meta">PDF · 33 MB</span>
+            </div>
+            <div class="material-actions">
+              <a class="button compact quiet" href="downloads/workbook-b4-teacher.pdf" target="_blank" rel="noopener">Open</a>
+              <a class="button compact primary" href="downloads/workbook-b4-teacher.pdf" download>Download</a>
+            </div>
+          </article>
+
+          <article class="material-row" data-audience="student">
+            <div class="file-mark review" aria-hidden="true">R</div>
+            <div class="material-copy">
+              <div class="material-labels"><span class="tag">Review</span><span class="audience student">Student</span></div>
+              <h3>B4 Review Worksheet</h3>
+              <p>Grammar consolidation worksheet for students.</p>
+              <span class="file-meta">PDF · 236 KB</span>
+            </div>
+            <div class="material-actions">
+              <a class="button compact quiet" href="downloads/b4-review-worksheet-student.pdf" target="_blank" rel="noopener">Open</a>
+              <a class="button compact primary" href="downloads/b4-review-worksheet-student.pdf" download>Download</a>
+            </div>
+          </article>
+
+          <article class="material-row" data-audience="teacher">
+            <div class="file-mark review teacher" aria-hidden="true">R</div>
+            <div class="material-copy">
+              <div class="material-labels"><span class="tag">Review</span><span class="audience teacher">Teacher</span></div>
+              <h3>B4 Review Worksheet with answers</h3>
+              <p>Teacher review worksheet with answer visibility.</p>
+              <span class="file-meta">PDF · 374 KB</span>
+            </div>
+            <div class="material-actions">
+              <a class="button compact quiet" href="downloads/b4-review-worksheet-teacher.pdf" target="_blank" rel="noopener">Open</a>
+              <a class="button compact primary" href="downloads/b4-review-worksheet-teacher.pdf" download>Download</a>
+            </div>
+          </article>
+
+          <article class="material-row" data-audience="student">
+            <div class="file-mark test" aria-hidden="true">T</div>
+            <div class="material-copy">
+              <div class="material-labels"><span class="tag">Assessment</span><span class="audience student">Student</span></div>
+              <h3>B4 End-of-Level Test</h3>
+              <p>Current student test for the B4 assessment.</p>
+              <span class="file-meta">PDF · 198 KB</span>
+            </div>
+            <div class="material-actions">
+              <a class="button compact quiet" href="downloads/b4-test-student.pdf" target="_blank" rel="noopener">Open</a>
+              <a class="button compact primary" href="downloads/b4-test-student.pdf" download>Download</a>
+            </div>
+          </article>
+
+          <article class="material-row" data-audience="teacher">
+            <div class="file-mark test teacher" aria-hidden="true">T</div>
+            <div class="material-copy">
+              <div class="material-labels"><span class="tag">Assessment</span><span class="audience teacher">Teacher</span></div>
+              <h3>B4 End-of-Level Test with answers</h3>
+              <p>Teacher test edition with answer visibility.</p>
+              <span class="file-meta">PDF · 225 KB</span>
+            </div>
+            <div class="material-actions">
+              <a class="button compact quiet" href="downloads/b4-test-teacher.pdf" target="_blank" rel="noopener">Open</a>
+              <a class="button compact primary" href="downloads/b4-test-teacher.pdf" download>Download</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="planned-note">
           <div>
-            <p class="tag">B4 Teacher</p>
-            <h3>Workbook B4</h3>
-            <p>Teacher version with answers and guidance.</p>
+            <p class="eyebrow">Coming later</p>
+            <h3>B1–B3 published apostilas</h3>
           </div>
-          <a class="button primary" href="downloads/workbook-b4-teacher.pdf" download>Download</a>
-        </article>
-
-        <article class="download-card ready">
-          <div>
-            <p class="tag">Review</p>
-            <h3>B4 Review Worksheet</h3>
-            <p>Student review worksheet for grammar consolidation.</p>
-          </div>
-          <a class="button primary" href="downloads/b4-review-worksheet-student.pdf" download>Download</a>
-        </article>
-
-        <article class="download-card ready">
-          <div>
-            <p class="tag">Teacher Review</p>
-            <h3>B4 Review Worksheet</h3>
-            <p>Teacher review worksheet with answer visibility.</p>
-          </div>
-          <a class="button primary" href="downloads/b4-review-worksheet-teacher.pdf" download>Download</a>
-        </article>
-
-        <article class="download-card ready">
-          <div>
-            <p class="tag">Test</p>
-            <h3>B4 End-of-Level Test</h3>
-            <p>Student test PDF for current B4 assessment.</p>
-          </div>
-          <a class="button primary" href="downloads/b4-test-student.pdf" download>Download</a>
-        </article>
-
-        <article class="download-card ready">
-          <div>
-            <p class="tag">Teacher Test</p>
-            <h3>B4 End-of-Level Test</h3>
-            <p>Teacher test PDF with answer visibility.</p>
-          </div>
-          <a class="button primary" href="downloads/b4-test-teacher.pdf" download>Download</a>
-        </article>
-      </div>
-
-      <div class="planned-grid" aria-label="Planned downloads">
-        <div class="planned-card">B1 apostila <span>planned</span></div>
-        <div class="planned-card">B2 apostila <span>planned</span></div>
-        <div class="planned-card">B3 apostila <span>planned</span></div>
+          <p>These download slots will be added as the revised books are ready.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="levels">
-      <div class="section-heading">
-        <p class="eyebrow">Level Map</p>
-        <h2>Four levels, one direction</h2>
-      </div>
-      <div class="level-grid">
-        <article>
-          <span>B1</span>
-          <h3>Personal and classroom survival</h3>
-          <p>Students learn to talk about themselves and function in class.</p>
-        </article>
-        <article>
-          <span>B2</span>
-          <h3>Daily life survival</h3>
-          <p>Students handle places, food, shopping, directions, and now-actions.</p>
-        </article>
-        <article>
-          <span>B3</span>
-          <h3>Stories, plans, advice</h3>
-          <p>Students explain what happened, what comes next, and what to do.</p>
-        </article>
-        <article>
-          <span>B4</span>
-          <h3>Survival English capstone</h3>
-          <p>Students solve realistic problems and prepare for the speaking mission.</p>
-        </article>
+    <section class="section level-section" id="levels" aria-labelledby="levels-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Course map</p>
+          <h2 id="levels-title">Four levels, one practical progression</h2>
+          <p>Each level gives students a larger world in which they can act with English.</p>
+        </div>
+
+        <div class="level-grid">
+          <article>
+            <span class="level-number">B1</span>
+            <p class="level-kicker">Start here</p>
+            <h3>Personal and classroom survival</h3>
+            <p>Talk about yourself and function in class.</p>
+          </article>
+          <article>
+            <span class="level-number">B2</span>
+            <p class="level-kicker">Daily life</p>
+            <h3>Places, food, and things happening now</h3>
+            <p>Handle basic daily interactions with confidence.</p>
+          </article>
+          <article>
+            <span class="level-number">B3</span>
+            <p class="level-kicker">Build range</p>
+            <h3>Stories, plans, advice, and problems</h3>
+            <p>Explain events and make simple decisions.</p>
+          </article>
+          <article>
+            <span class="level-number">B4</span>
+            <p class="level-kicker">Capstone</p>
+            <h3>Survival English in real situations</h3>
+            <p>Solve predictable problems and keep talking.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>Incluir English Portal</p>
-    <p>Formula -> Practice -> Real Use</p>
+    <div class="shell">
+      <p><strong>Incluir English</strong> · Coordinator portal</p>
+      <p>Formula → Practice → Real Use</p>
+    </div>
   </footer>
 
   <script src="app.js"></script>
