@@ -14,6 +14,7 @@
     "publish:b4": "node scripts/publish.js -b b4",
     "publish:b4:student": "node scripts/publish.js -b b4 -v student",
     "publish:b4:teacher": "node scripts/publish.js -b b4 -v teacher",
+    "publish:b4:materials": "node scripts/publish-b4-materials.js",
     "publish:b4:color": "node scripts/publish.js -b b4 --color",
     "publish:b4:full": "node scripts/publish.js -b b4 --no-compress",
     "build:student:all": "bash scripts/build-student-all.sh",
