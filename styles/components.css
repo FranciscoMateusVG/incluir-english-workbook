@@ -484,6 +484,7 @@ RULE: Components cannot be nested arbitrarily - see NESTING RULES section.
 .dialogue-line {
     margin-bottom: var(--spacing-sm);
     display: flex;
+    gap: var(--spacing-sm);
 }
 
 .dialogue-line:last-child {
