@@ -12,6 +12,8 @@ npm run install:playwright
 
 ### 2. Generate a PDF
 
+> Note: `content/chapters/` paths in this doc are historical — chapter sources now live per level in `content/<book>/workbooks/` (e.g. `content/b4/workbooks/`).
+
 ```bash
 # Student version (default)
 node scripts/build.js content/chapters/chapter-01-greetings.html

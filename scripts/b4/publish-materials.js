@@ -10,10 +10,10 @@ const outputDir = path.join(projectRoot, 'output', 'b4', 'materials');
 const portalDir = path.join(projectRoot, 'portal', 'downloads', 'b4');
 
 const materials = [
-    { slug: 'chapter-practice-homework', group: 'practice', source: 'practice/chapter-practice-homework.html' },
-    { slug: 'foundation-test-1', group: 'assessments', source: 'assessments/foundation-test-1.html' },
-    { slug: 'foundation-test-2', group: 'assessments', source: 'assessments/foundation-test-2.html' },
-    { slug: 'speaking-mission-exam', group: 'assessments', source: 'assessments/speaking-mission-exam.html' }
+    { slug: 'chapter-practice-homework', group: 'exercises', source: 'exercises/chapter-practice-homework.html' },
+    { slug: 'foundation-test-1', group: 'exams', source: 'exams/foundation-test-1.html' },
+    { slug: 'foundation-test-2', group: 'exams', source: 'exams/foundation-test-2.html' },
+    { slug: 'speaking-mission-exam', group: 'exams', source: 'exams/speaking-mission-exam.html' }
 ];
 
 fs.mkdirSync(outputDir, { recursive: true });

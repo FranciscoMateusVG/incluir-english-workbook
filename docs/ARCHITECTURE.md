@@ -20,6 +20,7 @@ incluir_english_workbook/
 ├── content/            # Actual workbook content
 │   ├── chapters/       # Chapter HTML files
 │   └── units/          # (Optional) standalone units
+│   NOTE: this tree is historical — content is now per-level: content/<book>/workbooks/ (plus exercises/, exams/, complementary-material/); see AGENTS.md
 ├── styles/             # CSS stylesheets
 │   ├── print.css       # Page setup, typography, breaks
 │   └── components.css  # Component definitions
@@ -149,6 +150,7 @@ html.teacher-version .answer { display: inline; }
 4. Update `TEMPLATING.md`
 
 ### Adding New Chapter
+> Note: paths below are historical — chapters now live in `content/<book>/workbooks/` (per-level layout).
 1. Create `content/chapters/chapter-XX-name.html`
 2. Use components from `components.css`
 3. Follow structure from existing chapters

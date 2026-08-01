@@ -31,8 +31,8 @@ bd sync               # Sync with git
 
 ### Sample Content
 
-- **[content/b4/chapters/chapter-01-tenses.html](content/b4/chapters/chapter-01-tenses.html)** - Reference chapter with all components
-- **[content/b4/chapters/chapter-02-future-modals-prepositions.html](content/b4/chapters/chapter-02-future-modals-prepositions.html)** - Reference chapter with illustrations
+- **[content/b4/workbooks/chapter-01-tenses.html](content/b4/workbooks/chapter-01-tenses.html)** - Reference chapter with all components
+- **[content/b4/workbooks/chapter-02-future-modals-prepositions.html](content/b4/workbooks/chapter-02-future-modals-prepositions.html)** - Reference chapter with illustrations
 
 ---
 
@@ -45,10 +45,11 @@ incluir_english_workbook/
 │   ├── cover.html      # Cover page template
 │   └── toc.html        # Table of contents template
 ├── content/            # Workbook content (this is where you work)
-│   ├── b1/chapters/    # Book Level 1 (Beginner)
-│   ├── b2/chapters/    # Book Level 2
-│   ├── b3/chapters/    # Book Level 3
-│   └── b4/chapters/    # Book Level 4 (most developed)
+│   ├── b1/workbooks/    # Book Level 1 (Beginner)
+│   ├── b2/workbooks/    # Book Level 2
+│   ├── b3/workbooks/    # Book Level 3
+│   └── b4/workbooks/    # Book Level 4 (most developed)
+│       (each level also has exercises/, exams/, and complementary-material/ buckets)
 ├── styles/             # CSS stylesheets (DO NOT MODIFY unless necessary)
 │   ├── print.css       # Page setup, typography, breaks
 │   └── components.css  # Component definitions
@@ -123,10 +124,10 @@ npm run install:playwright
 
 ```bash
 # Student version
-node scripts/build.js content/b4/chapters/chapter-01-tenses.html -v student
+node scripts/build.js content/b4/workbooks/chapter-01-tenses.html -v student
 
 # Teacher version
-node scripts/build.js content/b4/chapters/chapter-01-tenses.html -v teacher
+node scripts/build.js content/b4/workbooks/chapter-01-tenses.html -v teacher
 
 # Custom output
 node scripts/build.js input.html -o output/custom-name.pdf
@@ -160,7 +161,7 @@ The SAME HTML generates both versions via CSS toggle:
 
 **IMPORTANT: Steps 1-7 are ALL mandatory when creating a new chapter. NEVER skip image generation — chapters without illustrations are incomplete.**
 
-1. [ ] Create `content/<level>/chapters/chapter-XX-name.html`
+1. [ ] Create `content/<level>/workbooks/chapter-XX-name.html`
 2. [ ] Copy structure from an existing chapter (e.g., `chapter-01-tenses.html`)
 3. [ ] Use only components from `components.css`
 4. [ ] Include `.answer` spans for all exercise items
@@ -172,8 +173,8 @@ The SAME HTML generates both versions via CSS toggle:
    - Run the script to generate all images
    - Insert `<figure class="image-figure">` tags in the chapter HTML
    - Verify images render in the built PDF
-8. [ ] Test build: `node scripts/build.js content/<level>/chapters/chapter-XX-name.html -v student`
-9. [ ] Test build: `node scripts/build.js content/<level>/chapters/chapter-XX-name.html -v teacher`
+8. [ ] Test build: `node scripts/build.js content/<level>/workbooks/chapter-XX-name.html -v student`
+9. [ ] Test build: `node scripts/build.js content/<level>/workbooks/chapter-XX-name.html -v teacher`
 
 ---
 
@@ -198,7 +199,7 @@ Each chapter should have **~5 black and white illustrations** to make the conten
 
 ### Image Placement in HTML
 
-Use the `<figure class="image-figure">` component. **Paths must be relative from `content/b4/chapters/` — use `../../../assets/images/b4/`** (3 levels up).
+Use the `<figure class="image-figure">` component. **Paths must be relative from `content/b4/workbooks/` — use `../../../assets/images/b4/`** (3 levels up).
 
 ```html
 <figure class="image-figure">

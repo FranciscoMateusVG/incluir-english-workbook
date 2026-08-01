@@ -18,8 +18,8 @@
  *   --debug, -d     Keep browser open for debugging
  *
  * EXAMPLES:
- *   node scripts/build.js content/b4/chapters/chapter-01-tenses.html -b b4
- *   node scripts/build.js content/b4/chapters/chapter-01-tenses.html -b b4 -v teacher -o output/b4/ch1-teacher.pdf
+ *   node scripts/build.js content/b4/workbooks/chapter-01-tenses.html -b b4
+ *   node scripts/build.js content/b4/workbooks/chapter-01-tenses.html -b b4 -v teacher -o output/b4/ch1-teacher.pdf
  *   node scripts/build.js content/full-workbook.html --variant student --output output/workbook-student.pdf
  *
  * REQUIREMENTS:

@@ -16,10 +16,10 @@ This project uses an **iterative chapter-by-chapter review loop** between the hu
 
 ```bash
 # Student version (default)
-node scripts/build.js content/<book>/chapters/<chapter>.html -v student -o output/review.pdf
+node scripts/build.js content/<book>/workbooks/<chapter>.html -v student -o output/review.pdf
 
 # Teacher version (shows answers, teacher notes)
-node scripts/build.js content/<book>/chapters/<chapter>.html -v teacher -o output/review-teacher.pdf
+node scripts/build.js content/<book>/workbooks/<chapter>.html -v teacher -o output/review-teacher.pdf
 ```
 
 Always output to `output/review.pdf` (or `output/review-teacher.pdf`) so there's one predictable file to open. After rendering, open it:
@@ -35,7 +35,7 @@ open output/review.pdf
 - Layout and page breaks
 - Teacher notes (in teacher version)
 
-**Step 3 — Apply requested changes.** Edit the HTML source in `content/<book>/chapters/`, then go back to Step 1.
+**Step 3 — Apply requested changes.** Edit the HTML source in `content/<book>/workbooks/`, then go back to Step 1.
 
 ### Rules
 
@@ -50,8 +50,8 @@ open output/review.pdf
 
 | Action | Command |
 |--------|---------|
-| Render chapter (student) | `node scripts/build.js content/b4/chapters/chapter-02-future-modals-prepositions.html -v student -o output/review.pdf` |
-| Render chapter (teacher) | `node scripts/build.js content/b4/chapters/chapter-02-future-modals-prepositions.html -v teacher -o output/review-teacher.pdf` |
+| Render chapter (student) | `node scripts/build.js content/b4/workbooks/chapter-02-future-modals-prepositions.html -v student -o output/review.pdf` |
+| Render chapter (teacher) | `node scripts/build.js content/b4/workbooks/chapter-02-future-modals-prepositions.html -v teacher -o output/review-teacher.pdf` |
 | Open PDF | `open output/review.pdf` |
 | Build full workbook | `npm run build:b4` (only after all chapters are approved) |
 
@@ -147,7 +147,7 @@ node scripts/gen-image.js assets/images/b4/ch05-new-concept.png "Two people havi
 Always re-render the chapter and verify the image appears correctly:
 
 ```bash
-node scripts/build.js content/b4/chapters/<chapter>.html -v student -o output/review.pdf && open output/review.pdf
+node scripts/build.js content/b4/workbooks/<chapter>.html -v student -o output/review.pdf && open output/review.pdf
 ```
 
 ---

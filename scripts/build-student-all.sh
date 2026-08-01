@@ -33,10 +33,10 @@ FAILED=()
 SUCCEEDED=()
 
 for book in "${BOOKS[@]}"; do
-    chapters_dir="$PROJECT_ROOT/content/$book/chapters"
+    chapters_dir="$PROJECT_ROOT/content/$book/workbooks"
 
     if [ ! -d "$chapters_dir" ]; then
-        echo "SKIP: $book (no chapters directory found)"
+        echo "SKIP: $book (no workbooks directory found)"
         continue
     fi
 

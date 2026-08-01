@@ -124,9 +124,9 @@ function parseArgs() {
 // =============================================================================
 
 function getChapterFiles(book) {
-    const chaptersDir = path.join(PROJECT_ROOT, 'content', book, 'chapters');
+    const chaptersDir = path.join(PROJECT_ROOT, 'content', book, 'workbooks');
     if (!fs.existsSync(chaptersDir)) {
-        console.error(`Error: Chapters directory not found: ${chaptersDir}`);
+        console.error(`Error: Workbooks directory not found: ${chaptersDir}`);
         process.exit(1);
     }
 
@@ -213,7 +213,7 @@ async function buildAll(options) {
 
     // Write temp file next to chapter sources so ../../../assets/... image paths resolve
     // (same base URL as single-chapter builds; project-root temp file broke relative src)
-    const chaptersDir = path.join(PROJECT_ROOT, 'content', options.book, 'chapters');
+    const chaptersDir = path.join(PROJECT_ROOT, 'content', options.book, 'workbooks');
     const tempFile = path.join(chaptersDir, `.tmp-workbook-${options.book}.html`);
     fs.writeFileSync(tempFile, combinedHTML, 'utf-8');
 
