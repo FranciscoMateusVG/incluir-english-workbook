@@ -108,15 +108,18 @@ function generateWithOpenAI() {
   }
 
   const body = JSON.stringify({
-    model: 'dall-e-3',
+    model: 'gpt-image-1',
     prompt,
     n: 1,
     size,
-    quality: 'standard',
-    response_format: 'b64_json'
+    quality: 'high'
+    // gpt-image-1 always returns b64_json — response_format is not a
+    // supported param and the API 400s if it's included (this was the
+    // actual break: dall-e-3 is deprecated/pinned-removed and gpt-image-1
+    // rejects response_format).
   })
 
-  console.log('Calling DALL-E 3...')
+  console.log('Calling gpt-image-1...')
   return new Promise((resolve, reject) => {
     const req = https.request(
       {
