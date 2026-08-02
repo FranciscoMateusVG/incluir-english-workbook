@@ -1,0 +1,7 @@
+# Dokploy static-site deploy (aperture-bhw6i). Dokploy injects the Traefik
+# routing labels, dokploy-network, and the domain/port mapping — keep this clean.
+services:
+  incluir-english-portal-c864c2:
+    build: .
+    container_name: incluir-english-portal-c864c2
+    restart: unless-stopped

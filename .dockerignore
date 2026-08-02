@@ -1,0 +1,12 @@
+# Only portal/ ends up in the image; keep the build context small by excluding
+# the workbook-generation project (node_modules etc.). portal/ stays fully included.
+.git
+.beads
+.env
+node_modules
+output
+reports
+content
+docs
+*.log
+.DS_Store
