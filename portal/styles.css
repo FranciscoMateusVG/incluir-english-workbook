@@ -983,6 +983,7 @@ kbd {
 
 .filter-button {
   min-height: 44px; /* WCAG touch-target minimum (aperture-m9jgh a11y fix) */
+  min-width: 44px; /* short labels ("All") otherwise fall under 44px wide (aperture-m9jgh re-gate) */
   padding: 6px 12px;
   border: 0;
   border-radius: 7px;
