@@ -299,7 +299,7 @@ a {
 }
 
 .button.compact {
-  min-height: 38px;
+  min-height: 44px; /* WCAG touch-target minimum (aperture-m9jgh a11y fix) */
   padding: 8px 12px;
   font-size: 12px;
 }
@@ -982,7 +982,7 @@ kbd {
 }
 
 .filter-button {
-  min-height: 34px;
+  min-height: 44px; /* WCAG touch-target minimum (aperture-m9jgh a11y fix) */
   padding: 6px 12px;
   border: 0;
   border-radius: 7px;
@@ -1191,7 +1191,7 @@ kbd {
 .file-meta {
   display: inline-block;
   margin-top: 7px;
-  color: #819096;
+  color: var(--muted); /* was #819096 (3.30:1) — var(--muted) #617078 clears 4.5:1 (aperture-m9jgh a11y fix) */
   font-size: 10px;
   font-weight: 700;
 }

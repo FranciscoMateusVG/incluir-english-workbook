@@ -47,8 +47,10 @@ Section C — B3 material (10 points)
   modals (should/must/have to/can) · comparatives and superlatives
 
 Section D — B4 material (10 points)
-  Present Perfect · Past Perfect (sequencing) · Passive (service problems)
-  reported speech (reduced) · relative clauses · phrasal verbs
+  Present Perfect (experiences, recent problems) · Passive (service problems)
+  relative clauses · phrasal verbs · for vs to
+  (NOT Past Perfect or Reported Speech — curriculum lists both under
+   reduce/reframe, so they fail the keep-only item contract below)
 
 Total: 40 points · Suggested time: 40 minutes (about 10 per section)
 ```
@@ -82,7 +84,7 @@ All four sections ≥ 7          →  beyond B4 — coordinator conversation
 | C ≥ 7, D &lt; 7 | **B4** |
 | D ≥ 7 | **Beyond program** — coordinator decides |
 
-**Borderline rule:** a section scored exactly 6 is a borderline. The coordinator may run the optional 5-minute conversation check (appendix in the exam's teacher edition: three graded prompts from the two candidate levels' "useful survival phrases") and place up or down on that basis. Default when in doubt: **place DOWN** — a student who finds the first weeks easy gains confidence; a student who drowns in week one is a dropout risk. This mirrors the program's existing feedback-profile philosophy: the score routes, the human confirms.
+**Borderline rule:** a section scored exactly 6 is a borderline. The coordinator may run the optional 5-minute conversation check (appendix in the exam's teacher edition: one easier-level and one harder-level prompt PER BOUNDARY — A=6, B=6, C=6, D=6 each get their own adjacent pair — plus a universal repair prompt) and place up or down on that basis. Default when in doubt: **place DOWN** — a student who finds the first weeks easy gains confidence; a student who drowns in week one is a dropout risk. This mirrors the program's existing feedback-profile philosophy: the score routes, the human confirms.
 
 **Why 70%:** the gate asks "has this student already mastered what this level teaches?" — placement INTO a level should require comfortable command of the *prior* rungs, and 7/10 on objective items is comfortable command without demanding perfection. 40% as the B0 floor separates "shaky B1 candidate" from "cannot yet parse the page," which is what B0 exists for.
 
