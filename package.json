@@ -32,6 +32,7 @@
     "publish:b4:materials": "node scripts/b4/publish-materials.js",
     "publish:b4:color": "node scripts/publish.js -b b4 --color",
     "publish:b4:full": "node scripts/publish.js -b b4 --no-compress",
+    "publish:placement": "node scripts/placement/publish-materials.js",
     "build:student:all": "bash scripts/build-student-all.sh",
     "build:teacher:all": "bash scripts/build-teacher-all.sh",
     "preview": "npx serve -l 3000",
