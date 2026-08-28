@@ -104,7 +104,7 @@ One HTML source following the foundation-test conventions:
 - Instruction callout: PT-first, includes the stop rule.
 - Four sections as `unit` blocks (`page-break-before` between sections), 25 items each (20 grammar + a `reading-passage` block with 5 objective questions), mission-context illustration at the top (mandatory per AGENTS.md).
 - Answers via the standard variant mechanism: `.answer` spans / `answer-blank[data-answer]` — the teacher PDF IS the answer key.
-- Teacher edition additionally carries: `teacher-note` "Administration" block (when: before Class 1; time: 40 min; what to say), the **scoring rubric table above rendered in full**, the borderline conversation guide, and a routing note per the feedback-profile precedent ("Score → Placement → what to tell the student").
+- Teacher edition additionally carries: `teacher-note` "Administration" block (when: before Class 1; time: up to 75 min, most students far less; what to say), the **scoring rubric table above rendered in full**, the borderline conversation guide, and a routing note per the feedback-profile precedent ("Score → Placement → what to tell the student").
 
 **Location (new cross-level home — none exists today):**
 
