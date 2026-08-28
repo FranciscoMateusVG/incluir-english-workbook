@@ -1,6 +1,6 @@
 # Placement Exam (Nivelamento): Routing New Students into B1–B4
 
-Spec for bead aperture-l3rk2. Status: pending approval. Content production is a follow-up task — this document defines the instrument; it contains no exam items.
+Spec for bead aperture-l3rk2 (approved); instrument built under aperture-m9jgh and expanded to 100 points under aperture-nv0d6. Status: BUILT AND LIVE — `content/placement/exam.html`, published on the portal. This document is the instrument's design contract; it contains no exam items.
 
 ## Purpose
 
@@ -60,7 +60,7 @@ Total: 100 points · Suggested time: 75 minutes — the stop rule means most
 students use far less (a true beginner works only Section A, ~20 min)
 ```
 
-Item types per section: mix of `fill-blank`, `multiple-choice`, `matching`, and `short-answer` with tolerant keys (existing `data-exercise-type` vocabulary; existing component classes; no new CSS). Each section's items come only from that level's "grammar to keep" list in CURRENT-VS-NEXT-CURRICULUM.md — the grammar-ownership table is the item-selection contract.
+Item types per section: `fill-blank`, `multiple-choice`, and `matching`, with tolerant keys; reading true/false renders as two-option multiple-choice (existing `data-exercise-type` vocabulary; existing component classes; no new CSS). Each section's items come only from that level's "grammar to keep" list in CURRENT-VS-NEXT-CURRICULUM.md — the grammar-ownership table is the item-selection contract.
 
 **Stop rule (student-facing, in Portuguese):** "Responda até onde conseguir. Quando as questões ficarem difíceis demais, pare — isso é esperado e não é um problema. *(Answer as far as you can. When the questions get too hard, stop — that is expected and it is not a problem.)*" The exam is not meant to be finished by most takers; the instruction removes the shame of stopping.
 
@@ -93,7 +93,7 @@ All four sections ≥ 18           →  beyond B4 — coordinator conversation
 
 **Why 72%:** the gate asks "has this student already mastered what this level teaches?" — placement INTO a level should require comfortable command of the *prior* rungs, and 18/25 on objective items is comfortable command without demanding perfection. Of the two candidates nearest the original 70% philosophy (17/25 = 68% vs 18/25 = 72%), the stricter one wins because it aligns with the place-down-by-default rule. 40% as the B0 floor (10/25, exact) separates "shaky B1 candidate" from "cannot yet parse the page," which is what B0 exists for.
 
-**B0 caveat (open decision for the coordinator/operator):** B0 has chapters but no assessments, no portal presence, and may not be offered as a class. If B0 is not a real destination this semester, the A&lt;4 row collapses into "B1 with support flag" and the teacher edition says so. The spec recommends keeping the B0 row: the level exists in the repo, and intake is precisely where it becomes useful.
+**B0 caveat — RESOLVED (operator, 2026-08-27): B0 IS offered this semester**, so the A&lt;10 row is a real placement destination, not a caveat. (Historical context: B0 has chapters but no assessments and no portal presence. If B0 ever stops being offered, the A&lt;10 row collapses into "B1 with support flag" and the teacher edition says so — but that is a future decision, not today's state.)
 
 ## Document structure (build-phase contract)
 
@@ -140,10 +140,10 @@ Portal: one new `details.material-group#materials-placement` accordion above the
 
 ## Follow-up tasks this spec implies (GLaDOS files; not filed here)
 
-1. **Build the instrument** — author `exam.html` per this spec (items, keys, illustration, publish script, portal wiring). One content task, this repo.
-2. **B0 decision** — operator confirms whether B0 is an offered destination this semester (affects one rubric row + teacher-edition wording; do not block task 1 on it — ship with the B0 row and a caveat note, per recommendation above).
-3. **(Future, optional) Digital intake form** — monorepo-incluir frontend bead, only if paper intake proves limiting. Items port unchanged.
+1. **Build the instrument** — ✅ DONE (aperture-m9jgh; expanded under aperture-nv0d6).
+2. **B0 decision** — ✅ RESOLVED (operator confirmed 2026-08-27: B0 is offered; the rubric's B0 row is live).
+3. **(Future, optional) Digital intake form** — monorepo-incluir frontend bead, only if paper intake proves limiting. Items port unchanged; all items are objective, so auto-scoring is mechanical.
 
 ## Final principle
 
-The exam's job is not to measure everything — it is to make the intake decision repeatable. Forty objective points, one rubric table, place down when in doubt. Everything else is a refinement.
+The exam's job is not to measure everything — it is to make the intake decision repeatable. One hundred objective points, one rubric table, place down when in doubt. Everything else is a refinement.
