@@ -988,7 +988,7 @@ kbd {
   border: 0;
   border-radius: 7px;
   background: transparent;
-  color: var(--muted);
+  color: #5f6e76; /* filter-specific: var(--muted) #617078 is 4.409:1 on the #efeee8 track — this measures 4.541:1, WCAG AA (aperture-zb85q, Izzy measurement) */
   font-size: 12px;
   font-weight: 760;
   cursor: pointer;
