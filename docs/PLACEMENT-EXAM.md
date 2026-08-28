@@ -93,7 +93,7 @@ All four sections ≥ 11           →  beyond B4 — coordinator conversation
 
 **Why 73.3%:** the gate asks "has this student already mastered what this level teaches?" — placement INTO a level should require comfortable command of the *prior* rungs, and 11/15 on objective items is comfortable command without demanding perfection. Of the two candidates nearest the original 70% philosophy (10/15 = 66.7% vs 11/15 = 73.3%), the stricter one wins because it aligns with the place-down-by-default rule. 40% as the B0 floor (6/15, exact) separates "shaky B1 candidate" from "cannot yet parse the page," which is what B0 exists for.
 
-**B0 caveat — RESOLVED (operator, 2026-08-27): B0 IS offered this semester**, so the A&lt;10 row is a real placement destination, not a caveat. (Historical context: B0 has chapters but no assessments and no portal presence. If B0 ever stops being offered, the A&lt;10 row collapses into "B1 with support flag" and the teacher edition says so — but that is a future decision, not today's state.)
+**B0 caveat — RESOLVED (operator, 2026-08-27): B0 IS offered this semester**, so the A&lt;6 row is a real placement destination, not a caveat. (Historical context: B0 has chapters but no assessments and no portal presence. If B0 ever stops being offered, the A&lt;6 row collapses into "B1 with support flag" and the teacher edition says so — but that is a future decision, not today's state.)
 
 ## Document structure (build-phase contract)
 
